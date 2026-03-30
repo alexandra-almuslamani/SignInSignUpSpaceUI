@@ -1,0 +1,9 @@
+.git/
+node_modules/
+*.zip
+*.rar
+*.mp4
+*.mov
+*.psd
+*.ai
+*.pdf

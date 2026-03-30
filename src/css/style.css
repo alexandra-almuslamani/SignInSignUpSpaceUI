@@ -1,0 +1,391 @@
+.my-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.my-container:before {
+  content: '';
+  position: absolute;
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  background: url("../../media/img/pngwing.com.png") no-repeat center center/cover;
+  filter: blur(3px);
+  top: -9%;
+  right: -24%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  transition: 1.8s ease-in-out;
+}
+
+.forms-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.signin-signup {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  width: 50%;
+  grid-template-columns: 1fr;
+  z-index: 5;
+  transition: 1s 0.7s ease-in-out;
+}
+
+.my-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 5rem;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  transition: 0.2s 0.7s ease-in-out;
+}
+
+.my-form.sign-in-form {
+  z-index: 2;
+}
+
+.my-form.sign-up-form {
+  z-index: 1;
+  opacity: 0;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: 'poppins', sans-serif;
+  color: #fafafa;
+  margin-bottom: 10px;
+}
+
+.my-input-field {
+  max-width: 380px;
+  width: 100%;
+  height: 55px;
+  background-color: #f0f0f030;
+  margin: 10px 0;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+}
+
+.my-input-field i {
+  text-align: center;
+  line-height: 55px;
+  color: #fafafa;
+  font-size: 1.1rem;
+}
+
+.my-input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fafafa;
+}
+
+.my-input-field input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+.my-btn {
+  width: 150px;
+  height: 49px;
+  border: none;
+  outline: none;
+  border-radius: 49px;
+  background-color: #4242b7;
+  color: #fafafa;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.my-btn:hover {
+  background-color: #333392;
+}
+
+.social-text {
+  color: #fafafa;
+  padding: 0.7rem 0;
+  font-size: 1rem;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon {
+  height: 46px;
+  width: 46px;
+  border: 1px solid #fafafa;
+  margin: 0 0.45rem;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  color: #fafafa;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  color: #fff;
+  border-color: #4242b7;
+  background-color: #4242b7;
+}
+
+.my-panels-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.my-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  gap: 2rem;
+  z-index: 7;
+}
+
+.my-left-panel {
+  pointer-events: all;
+  padding: 4rem 16% 2rem 10%;
+}
+
+.my-right-panel {
+  pointer-events: none;
+  padding: 4rem 20% 2rem 18%;
+}
+
+.my-panel .my-content {
+  color: #fff;
+  transition: 0.9s 0.6s ease-in-out;
+}
+
+.my-panel h3 {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 1.5rem;
+}
+
+.my-panel p {
+  font-size: 0.95rem;
+  padding: 0.7rem 0;
+}
+
+.my-btn.transparent {
+  margin: 0;
+  background: none;
+  border: 2px solid #fff;
+  width: 130px;
+  height: 41px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.my-image {
+  width: 100%;
+  transition: 1.1s 0.4s ease-in-out;
+}
+
+.my-right-panel .my-content,
+.my-right-panel .my-image {
+  transform: translateX(800px);
+}
+
+.my-container.sign-up-mode:before {
+  transform: translate(100%, -50%);
+  right: 50%;
+}
+
+.my-container.sign-up-mode .my-right-panel .my-content,
+.my-container.sign-up-mode .my-right-panel .my-image {
+  transform: translateX(0px);
+}
+
+.my-container.sign-up-mode .my-left-panel .my-content,
+.my-container.sign-up-mode .my-left-panel .my-image {
+  transform: translateX(-800px);
+}
+
+.my-container.sign-up-mode .my-left-panel {
+  pointer-events: none;
+}
+
+.my-container.sign-up-mode .my-right-panel {
+  pointer-events: all;
+}
+
+.my-container.sign-up-mode .signin-signup {
+  left: 25%;
+}
+
+.my-container.sign-up-mode .my-form.sign-in-form {
+  opacity: 0;
+  z-index: 1;
+}
+
+.my-container.sign-up-mode .my-form.sign-up-form {
+  opacity: 1;
+  z-index: 2;
+}
+
+@media (max-width: 870px) {
+  .my-container {
+    min-height: 800px;
+    height: 100vh;
+  }
+
+  .my-container:before {
+    width: 1500px;
+    height: 1500px;
+    left: 30%;
+    bottom: 68%;
+    transform: translateX(-50%);
+    right: initial;
+    top: initial;
+    transition: 2s ease-in-out;
+  }
+
+  .signin-signup {
+    width: 100%;
+    left: 50%;
+    top: 95%;
+    transform: translate(-50%, -100%);
+    transition: 1s 0.8s ease-in-out;
+  }
+
+  .my-panels-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+
+  .my-panel {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5rem 8%;
+  }
+
+  .my-panel .my-content {
+    padding-right: 15%;
+    transition: 0.9s 0.8s ease-in-out;
+  }
+
+  .my-panel h3 {
+    font-size: 1.2rem;
+  }
+
+  .my-panel p {
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
+  }
+
+  .my-btn.transparent {
+    width: 110px;
+    height: 35px;
+    font-size: 0.7rem;
+  }
+
+  .my-image {
+    width: 200px;
+    transition: 0.9s 0.6s ease-in-out;
+  }
+
+  .my-left-panel {
+    grid-row: 1 / 2;
+  }
+
+  .my-right-panel {
+    grid-row: 3 / 4;
+  }
+
+  .my-right-panel .my-content,
+  .my-right-panel .my-image {
+    transform: translateY(300px);
+  }
+
+  .my-container.sign-up-mode:before {
+    transform: translate(-50%, 100%);
+    bottom: 32%;
+    right: initial;
+  }
+
+  .my-container.sign-up-mode .my-left-panel .my-image,
+  .my-container.sign-up-mode .my-left-panel .my-content {
+    transform: translateY(-300px);
+  }
+
+  .my-container.sign-up-mode .signin-signup {
+    top: 5%;
+    transform: translate(-50%, 0);
+    left: 50%;
+  }
+}
+
+@media (max-width: 570px) {
+  .my-form {
+    padding: 0 1.5rem;
+  }
+
+  .my-image {
+    display: none;
+  }
+
+  .my-panel .my-content {
+    padding: 0.5rem 1rem;
+  }
+
+  .my-container:before {
+    left: 50%;
+    bottom: 72%;
+  }
+
+  .my-container.sign-up-mode:before {
+    left: 50%;
+    bottom: 28%;
+  }
+
+  .my-panel h3 {
+    font-size: 1rem;
+  }
+
+  .my-panel p {
+    font-size: 0.5rem;
+    padding: 0.3rem 0;
+  }
+
+  .my-btn.transparent {
+    width: 90px;
+    height: 30px;
+    font-size: 0.6rem;
+  }
+}
